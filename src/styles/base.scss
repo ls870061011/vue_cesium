@@ -1,0 +1,74 @@
+// 公共样式引用
+html {
+  height: 100%;
+}
+
+body {
+  border: 0px;
+  color: $color_default;
+  font-family: sans-serif, 'Microsoft Yahei,微软雅黑';
+  font-size: 12px;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.curP {
+  cursor: pointer;
+  z-index: 1000;
+}
+
+//上下左右居中 fixed
+.fixCenter {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//上下左右居中 absolute
+.abCenter {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+.tbCenter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//定位左右居中
+.lrCenter {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+//左上角的详细信息
+.fixRight {
+  left: 80%;
+  position: fixed;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+
+// 显示省略号
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

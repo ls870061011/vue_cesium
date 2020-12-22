@@ -1,0 +1,258 @@
+.flow .el-form-item {
+  float: left;
+}
+
+.flow .el-form-item:nth-child(1) {
+  width: 60%;
+}
+
+.flow .el-form-item:nth-child(2) {
+  padding-left: 10px;
+  width: 40%;
+}
+
+.el-form-item__label {
+  color: $color_default;
+  font-size: 14px;
+  text-align: end;
+}
+
+.el-form-item--mini.el-form-item {
+  margin-bottom: 6px;
+}
+
+.form .el-input__inner {
+  background: rgba(67, 186, 254, 0.5);
+  border: 1px solid rgba(67, 186, 254, 0.5);
+  color: $color_white;
+}
+
+// Select 下拉框样式修改****************************
+.el-select {
+  .el-input__inner {
+    background-color: $color_sub1;
+    border: none;
+    border-radius: 0;
+    color: $color_white;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 8px;
+  }
+  .el-input__icon {
+    border: none;
+    line-height: 22px;
+  }
+}
+.el-select-dropdown {
+  background-color: $color_sub1;
+  border: 1px solid $color_sub1;
+  border-radius: 0;
+  margin: 0;
+  .el-select-dropdown__list {
+    margin-bottom: 16px;
+    .el-select-dropdown__item {
+      color: rgba($color_white, 0.5);
+      height: 28px;
+      line-height: 28px;
+    }
+    .el-select-dropdown__item.hover,
+    .el-select-dropdown__item:hover {
+      background: none;
+      color: $color_white;
+    }
+    .el-select-dropdown__item.selected {
+      color: $color_white;
+      font-weight: 700;
+    }
+  }
+  .popper__arrow {
+    display: none;
+  }
+}
+.el-select-dropdown.el-popper {
+  margin-top: 0;
+}
+// end Select 下拉框样式修改************************
+
+// 日期选择器样式修改********************************
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner {
+  font-size: 12px;
+  width: 80px;
+}
+.el-date-editor {
+  .el-input__inner {
+    background-color: $color_bg;
+    border: 1px solid $color_bg;
+    border-radius: 0;
+    color: $color_default;
+    height: 22px;
+    line-height: 22px;
+    padding: 4px 5px;
+    text-align: center;
+  }
+  .el-input__prefix,
+  .l-input__suffix {
+    display: none;
+  }
+}
+.el-date-table td.in-range div,
+.el-date-table td.in-range div:hover,
+.el-date-table.is-week-mode .el-date-table__row.current div,
+.el-date-table.is-week-mode .el-date-table__row:hover div {
+  background-color: rgba($color_white, 0.4);
+}
+.el-picker-panel.el-date-picker {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: $color_default;
+  height: 327px;
+  margin: 0;
+  top: 407px;
+  width: 370px;
+  .el-picker-panel__body {
+    background-color: transparent;
+    margin-top: 3px;
+    .el-date-picker__header {
+      background-color: $color_bg;
+      margin: 0px;
+      padding: 9px 15px;
+      .el-picker-panel__icon-btn {
+        color: $color_white;
+        font-size: 14px;
+      }
+    }
+    .el-date-picker__header-label {
+      color: $color_white;
+      font-size: 14px;
+      line-height: 19px;
+    }
+    .el-date-picker__header--bordered {
+      border-bottom: solid 1px rgba($color_white, 0.15);
+    }
+    .el-picker-panel__content {
+      background-color: rgba($color_bg, 0.85);
+      margin: -1px 0;
+      padding: 0 15px;
+      width: 100%;
+      .el-date-table,
+      .el-month-table {
+        th {
+          border-bottom: solid 1px rgba($color_white, 0.15);
+          color: $color_default;
+          letter-spacing: 1.09px;
+        }
+      }
+      .el-date-table td {
+        padding: 0;
+        span {
+          color: $color_default;
+          letter-spacing: 0;
+          line-height: 22px;
+        }
+        div {
+          align-items: center;
+          display: flex;
+          height: 40px;
+          justify-content: center;
+          padding: 0;
+          width: 40px;
+        }
+      }
+      .el-date-table td.today span {
+        color: $color_theme;
+      }
+      .el-date-table td.current:not(.disabled) span {
+        align-items: center;
+        background-color: transparent;
+        border: 2px solid $color_theme;
+        color: $color_theme;
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+      }
+      .el-date-table td.next-month,
+      .el-date-table td.prev-month {
+        color: $color_default;
+        letter-spacing: 0;
+        opacity: 0.5;
+      }
+    }
+  }
+  .popper__arrow {
+    display: none;
+  }
+}
+// end 日期选择器样式修改****************************
+
+// Collapse折叠面板样式修改****************************
+.el-collapse {
+  border: none;
+}
+
+.el-collapse-item__header {
+  background: linear-gradient(to bottom, rgba(20, 149, 235, 0.2), rgba(255, 255, 255, 0));
+  border: none;
+  color: $color_white;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.el-collapse-item__arrow {
+  line-height: 30px;
+}
+
+.el-collapse-item__wrap {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.el-collapse-item__content {
+  color: $color_default;
+}
+// end 折叠面板****************************
+
+// 滚动条样式********************************
+.el-scrollbar {
+  height: 100%;
+}
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+.el-scrollbar__bar {
+  right: 0;
+  .el-scrollbar__thumb {
+    background-color: rgba($color_white, 0.25);
+  }
+}
+// end 滚动条样式********************************
+
+// Tab标签页样式修改********************************
+.el-radio-button__inner {
+  background: $color_bg;
+  border: 1px solid $color_bg;
+  border-left: 0px solid transparent;
+  border-radius: 0;
+  color: $color_default;
+  font-size: 12px;
+  margin-right: 8px;
+  padding: 4px 14px;
+}
+.el-radio-button:hover,
+.el-radio-button__inner:hover {
+  color: $color_default;
+}
+.el-radio-button:first-child .el-radio-button__inner,
+.el-radio-button:last-child .el-radio-button__inner {
+  border-left: 0px solid transparent;
+  border-radius: 0;
+}
+.el-radio-button__orig-radio:checked + .el-radio-button__inner {
+  background-color: $color_sub1;
+  border-color: $color_sub1;
+  box-shadow: -1px 0 0 0 $color_sub1;
+  color: $color_white;
+}
+// Tab标签页样式修改*****************************

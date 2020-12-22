@@ -1,0 +1,118 @@
+/**通过传递参数的方式修改样式**/
+
+// 背景图片地址
+@mixin bg_img($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+//定位上下左右居中,根据高度和宽度
+@mixin p_center($width, $height) {
+  left: 50%;
+  margin-left: -$width/2;
+  margin-top: -$height/2;
+  position: absolute;
+  top: 50%;
+}
+
+//定位上下左右居中,根据transform
+@mixin t_center($position: absolute) {
+  left: 50%;
+  position: $position;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//border顶部边框
+@mixin border_top($color, $width: 1px, $type: solid) {
+  border-top: $width $type $color;
+}
+
+//border底部边框
+@mixin border_bottom($color, $width: 1px, $type: solid) {
+  border-bottom: $width $type $color;
+}
+
+//border左侧边框
+@mixin border_left($color, $width: 1px, $type: solid) {
+  border-left: $width $type $color;
+}
+
+//border右侧边框
+@mixin border_right($color, $width: 1px, $type: solid) {
+  border-right: $width $type $color;
+}
+
+//border所有边框
+@mixin border($color: transparent, $width: 1px, $type: solid) {
+  border: $width $type $color;
+}
+
+// flex布局
+@mixin flex($direction: row, $j_c: center, $a_i: center) {
+  align-items: $a_i;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $j_c;
+}
+
+// 固定宽度显示省略号
+@mixin ellipsis($width) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: $width;
+}
+
+//宽高
+@mixin width_height($width, $height) {
+  height: $height;
+  width: $width;
+}
+
+// 高度和行高
+@mixin height_line($height, $line-height) {
+  height: $height;
+  line-height: $line-height;
+}
+
+//字体大小，颜色
+@mixin font_size_color($size, $color) {
+  color: $color;
+  font-size: $size;
+}
+
+//字体颜色和背景色
+@mixin font_color_bg($color, $background-color) {
+  background-color: background-color;
+  color: $color;
+}
+
+// 左上位置
+@mixin left_top($left, $top) {
+  left: $left;
+  position: absolute;
+  top: $top;
+}
+
+// 右上位置
+@mixin right_top($right, $top) {
+  position: absolute;
+  right: $right;
+  top: $top;
+}
+
+// 左下位置
+@mixin left_bottom($left, $bottom) {
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+// 右下位置
+@mixin right_bottom($right, $bottom) {
+  bottom: $bottom;
+  position: absolute;
+  right: $right;
+}
