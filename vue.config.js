@@ -1,16 +1,16 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
+// const path = require('path');
+// const CompressionPlugin = require('compression-webpack-plugin');
 
-function resolve(dir) {
-  return path.join(__dirname, './', dir);
-}
+// function resolve(dir) {
+//   return path.join(__dirname, './', dir);
+// }
 
-// The path to the CesiumJS source code
-const cesiumSource = 'node_modules/cesium/Source';
-const cesiumWorkers = '../Build/Cesium/Workers';
+// const { openGzip } = require('./package.json');
 
+// All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
   outputDir: 'dist',
@@ -19,9 +19,9 @@ module.exports = {
   css: {
     loaderOptions: {
       scss: {
-        additionalData: `
-        @import "~@/styles/variables.scss";
-        @import "~@/styles/mixin.scss";
+        prependData: `
+        @import "@/styles/variables.scss";
+        @import "@/styles/mixin.scss";
         `,
       },
     },
@@ -35,20 +35,19 @@ module.exports = {
       config.mode = 'development';
       config.devtool = 'source-map'; // 开发环境显示源码，方便调试
     }
-
     config.plugins = [
       ...config.plugins,
-      // Copy Cesium Assets, Widgets, and Workers to a static directory
       new CopyWebpackPlugin({
         patterns: [
-          { from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' },
-          { from: path.join(cesiumSource, 'Assets'), to: 'Assets' },
-          { from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' },
+          {
+            from: 'node_modules/cesium/Build/Cesium',
+            to: 'cesium',
+          },
         ],
       }),
       new webpack.DefinePlugin({
         // Define relative base path in cesium for loading assets
-        CESIUM_BASE_URL: JSON.stringify(''),
+        CESIUM_BASE_URL: JSON.stringify('./cesium'),
       }),
     ];
   },
@@ -65,8 +64,5 @@ module.exports = {
 
     // 移除prefetch插件
     config.plugins.delete('prefetch');
-
-    // 设置别名
-    config.resolve.alias.set('cesium', resolve(cesiumSource));
   },
 };

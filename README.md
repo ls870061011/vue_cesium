@@ -1,24 +1,14 @@
-# vue_cesium_js
+# vue_cesium_ts
 
-## Project setup
-```
-yarn install
-```
+## 开发
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+```bash
+# 若未安装yarn，首先利用npm安装yarn，tyarn代表国内淘宝镜像,主要解决yarn安装慢的问题
+npm i yarn tyarn -g
 
-### Compiles and minifies for production
-```
-yarn build
-```
+# 安装依赖
+tyarn
 
-### Lints and fixes files
+# 启动服务
+tyarn run serve
 ```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

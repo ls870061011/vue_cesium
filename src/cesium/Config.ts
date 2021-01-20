@@ -3,7 +3,7 @@
  */
 
 class Config {
-  static viewer;
+  static viewer: any;
 }
 
 export default Config;

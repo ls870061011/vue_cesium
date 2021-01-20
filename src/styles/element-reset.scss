@@ -27,6 +27,33 @@
   color: $color_white;
 }
 
+/* 图层列表样式重写 */
+
+.layer-list {
+  .el-input__inner {
+    background: rgba($color_white, 0.1);
+    border: 1px solid rgba($color_white, 0.4);
+    color: $color_white;
+    height: 28px;
+    line-height: 28px;
+    width: 90%;
+  }
+  .el-input {
+    background-color: rgba($color_bg, 0.85);
+    padding-top: 5px;
+    text-align: center;
+  }
+  .el-tree {
+    background-color: transparent;
+    color: $color_white;
+  }
+  .el-tree-node__content:hover {
+    background-color: rgba($color_white, 0.2);
+  }
+  .el-tree-node:focus > .el-tree-node__content {
+    background-color: rgba($color_white, 0.2);
+  }
+}
 // Select 下拉框样式修改****************************
 .el-select {
   .el-input__inner {
